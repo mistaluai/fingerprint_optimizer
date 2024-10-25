@@ -17,6 +17,4 @@ class NoiseExtractor(nn.Module):
         self.denoiser = nn.Sequential(*layers)
 
     def forward(self, x):
-        denoised = self.denoiser(x)
-        noise = x - denoised
-        return noise
+        return self.denoiser(x)
